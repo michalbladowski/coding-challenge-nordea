@@ -1,6 +1,9 @@
 package com.interview.demo.model;
 
-import lombok.*;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.NonNull;
 import javax.persistence.*;
 import java.sql.Date;
 

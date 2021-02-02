@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * PersonController
+ *
+ * Additional controller that handles direct requests for Person-type objects
+ */
 @RestController
 @RequestMapping("/persons")
 public class PersonController {

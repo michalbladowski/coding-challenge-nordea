@@ -19,7 +19,6 @@ public class JobLauncherController {
     String destinationQueue;
 
     @PostMapping("/send")
-//    @GetMapping("/send")
     @ResponseStatus(HttpStatus.OK)
     public String putRequestOnQueue() {
         LOG.debug("In JobLauncherController. Putting trigger message on queue");

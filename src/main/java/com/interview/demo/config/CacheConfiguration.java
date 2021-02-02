@@ -6,6 +6,9 @@ import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Cache configuration. Sets up a cache for Person objects
+ */
 @Configuration
 @EnableCaching
 public class CacheConfiguration {
