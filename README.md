@@ -1,5 +1,5 @@
-# challenges
-Repository containing various challenge-projects
+# coding-challenge-nordea
+Repository containing a coding challenge project
 
 ## Goal
 Project shows usage of Springboot, Spring Batch, Spring Data, Spring Cache and REST services.
