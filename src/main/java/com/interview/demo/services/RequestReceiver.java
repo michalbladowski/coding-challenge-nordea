@@ -34,11 +34,11 @@ public class RequestReceiver {
         LOG.debug("In RequestReceiver. Incoming trigger message: " + msg);
         LOG.debug("Starting the job");
         try {
-            long start = System.nanoTime();
+            long start = System.currentTimeMillis();
             jobLauncher.run(triggerCachingJob, new JobParameters());
-            long finish = System.nanoTime();
+            long finish = System.currentTimeMillis();
             long timeElapsed = finish - start;
-            LOG.debug("In RequestController. Finished the job in time: " + timeElapsed);
+            LOG.debug("In JMS consumer. Finished the job in time: " + timeElapsed + "ms");
         } catch (JobExecutionAlreadyRunningException
                 | JobRestartException
                 | JobInstanceAlreadyCompleteException

@@ -30,7 +30,7 @@ public class PersonControllerTest {
     public void getPersonsTest() throws Exception {
         mockMvc.perform(get("/persons"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", Matchers.hasSize(10)))
+                .andExpect(jsonPath("$", Matchers.hasSize(50)))
                 .andExpect(jsonPath("$[4].firstName", Matchers.equalTo("James")));
     }
 }
