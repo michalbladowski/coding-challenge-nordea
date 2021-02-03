@@ -22,6 +22,9 @@ While executing the Job, in Reader item data is pulled from repository through s
 Two simple test were added. 
 First verifies the Person data, second verifies if the Response for POST trigger is of correct status and body.
 
+### How to build
+mvn clean install
+
 ### Additional remarks
 By default DEBUG logs are enabled for the app so user can see the flow in details as well as notice elapsed time reduction due to Cache usage.
 
