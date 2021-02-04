@@ -35,6 +35,9 @@ Once the build is finished, run the application using following command:
 ```
 java -jar target/demo-0.0.1-SNAPSHOT.jar
 ```
+
+Now you can use described endpoints to trigger the process or read the PERSON table content.
+
 ### Additional remarks
 By default DEBUG logs are enabled for the app so user can see the flow in details as well as notice elapsed time reduction due to Cache usage.
 
