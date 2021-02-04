@@ -1,11 +1,11 @@
-## coding-challenge-nordea
+## coding-challenge demo application
 Repository containing a coding challenge project
 
 ### Goal
 Project shows usage of Spring Boot, Spring Batch, Spring Data with HSQL, Spring Cache and REST services.
 
 ### Workflow
-On startup application creates database structure (table Person) and populates it with some random data.
+On startup application creates database structure (table Person in HSQL database) and populates it with some random data.
 
 Application also exposes two endpoints: 
 ```
@@ -22,14 +22,24 @@ While executing the Job, in Reader item data is pulled from repository through s
 Two simple test were added. 
 First verifies the Person data, second verifies if the Response for POST trigger is of correct status and body.
 
-### How to build
-mvn clean install
+### How to run
+Application makes use of embedded HSQL database so no manual application deployment is required.
+Schema and initial data are loaded on application startup.
 
+To build the application clone or download the project and run:
+```
+mvn clean install
+```
+
+Once the build is finished, run the application using following command:
+```
+java -jar target/demo-0.0.1-SNAPSHOT.jar
+```
 ### Additional remarks
 By default DEBUG logs are enabled for the app so user can see the flow in details as well as notice elapsed time reduction due to Cache usage.
 
 ### Contact
-
+```
 michal.bladowski@gmail.com
-
 https://github.com/michalbladowski
+```
