@@ -16,10 +16,9 @@ POST /request/send
 First one is used just to validate that data coming from the DB is correct.
 
 Second endpoint's role is to send a message on JMS queue. When JMS consumer receives the message, it triggers the Batch Job start.
-Application has two implementations of Batch Job Step. First one (default) uses Tasklet 
-to pull data from the repository through service and put into Cache.
-
-Second implementation uses Reader item to do exactly the same.
+Application has two implementations of Batch Job Step. 
+First one uses Tasklet to pull data from the repository through service and put into Cache. NOTE: As of spring-boot 3.0 tasklets are DEPRECATED.
+Second implementation (default) uses Reader item to do exactly the same.
 
 ### Tests
 Two simple test were added. 
@@ -36,7 +35,7 @@ mvn clean install
 
 Once the build is finished, run the application using following command:
 ```
-java -jar target/demo-0.0.1-SNAPSHOT.jar
+java -jar target/demo-0.0.2-SNAPSHOT.jar
 ```
 
 Now you can use described endpoints to trigger the process or read the PERSON table content.
