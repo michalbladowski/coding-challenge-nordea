@@ -1,10 +1,11 @@
-package com.interview.demo;
+package com.github.michalbladowski.springdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.jms.annotation.EnableJms;
 
-@SpringBootApplication
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 @EnableJms
 public class DemoApplication {
 

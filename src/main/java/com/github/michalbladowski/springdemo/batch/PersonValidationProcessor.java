@@ -1,6 +1,6 @@
-package com.interview.demo.batch;
+package com.github.michalbladowski.springdemo.batch;
 
-import com.interview.demo.model.Person;
+import com.github.michalbladowski.springdemo.model.Person;
 import org.springframework.batch.item.ItemProcessor;
 
 /**

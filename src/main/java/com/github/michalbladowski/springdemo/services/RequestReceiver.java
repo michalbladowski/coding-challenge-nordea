@@ -1,7 +1,6 @@
-package com.interview.demo.services;
+package com.github.michalbladowski.springdemo.services;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersInvalidException;
@@ -18,8 +17,8 @@ import org.springframework.stereotype.Component;
  * Represents the JMS client which listens on specified queue and starts predefined Batch process when Trigger comes
  */
 @Component
+@Slf4j
 public class RequestReceiver {
-    private static final Logger LOG = LoggerFactory.getLogger(RequestReceiver.class);
 
     @Autowired
     JobLauncher jobLauncher;
@@ -31,14 +30,14 @@ public class RequestReceiver {
 
     @JmsListener(destination = "${jms.queue.destination}")
     public void receive(String msg) {
-        LOG.debug("In RequestReceiver. Incoming trigger message: " + msg);
-        LOG.debug("Starting the job");
+        log.debug("In RequestReceiver. Incoming trigger message: " + msg);
+        log.debug("Starting the job");
         try {
             long start = System.currentTimeMillis();
             jobLauncher.run(triggerCachingJob, new JobParameters());
             long finish = System.currentTimeMillis();
             long timeElapsed = finish - start;
-            LOG.debug("In JMS consumer. Finished the job in time: " + timeElapsed + "ms");
+            log.debug("In JMS consumer. Finished the job in time: " + timeElapsed + "ms");
         } catch (JobExecutionAlreadyRunningException
                 | JobRestartException
                 | JobInstanceAlreadyCompleteException

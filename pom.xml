@@ -5,16 +5,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.2</version>
+		<version>3.1.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.interview</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.github.michalbladowski</groupId>
+	<artifactId>springdemo</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>demo</name>
-	<description>Simple interview project</description>
+	<description>Demo project for Spring Boot, Spring Batch, ReST, JMS and Caching</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
+		<springdoc.version>2.1.0</springdoc.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,6 +38,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -44,10 +55,9 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
-			<version>2.7.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
